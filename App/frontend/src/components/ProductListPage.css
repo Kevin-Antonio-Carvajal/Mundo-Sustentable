@@ -1,0 +1,70 @@
+.product-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los items de los productos horizontalmente */
+  padding: 0;
+  width: 100%;
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 80%; /* Establece un ancho fijo para los items de productos */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espacio entre la imagen y los detalles del producto */
+}
+
+.product-image {
+  width: 100px; /* Ajuste de ancho para las imágenes */
+  height: 100px; /* Asegúrate de que las imágenes no se deformen */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio asignado sin deformarse */
+  margin-right: 10px;
+}
+
+.product-details {
+  overflow: hidden;
+  flex-grow: 1; /* Permite que los detalles ocupen el espacio restante */
+}
+
+.product-name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.product-description {
+  font-size: 0.9em;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px 15px;
+  margin: 5px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Estilo para el contenedor del menú desplegable y el botón de búsqueda */
+.search-container {
+  display: flex;
+  justify-content: flex-end; /* Alinea el contenido a la derecha */
+  width: 80%; /* Mismo ancho que los items de productos */
+  margin-top: 10px; /* Espacio antes del primer producto */
+}
+
+/* Estilos adicionales para el select y el botón dentro del contenedor */
+.search-container select, .search-container button {
+  padding: 8px 10px; /* Padding similar al de los botones */
+  margin-left: 10px; /* Espacio entre el select y el botón */
+  border: 1px solid #ccc; /* Borde sutil */
+  border-radius: 5px; /* Bordes redondeados como los botones */
+}
+
+.search-container button {
+  background-color: #007BFF; /* Color azul para el botón */
+  color: white; /* Texto blanco para el botón */
+  cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+}

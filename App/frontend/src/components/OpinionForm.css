@@ -1,0 +1,153 @@
+.container {
+    width: 300px;
+    margin: auto;
+    padding-top: 50px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+input[type=text], input[type=email], input[type=password], select {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+input[type=submit] {
+    padding: 10px;
+    background-color: #FFC107; /* Color amarillo vibrante */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: #FFC107; /* Color amarillo vibrante */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Centra los botones verticalmente si es necesario */
+    flex-direction: column; /* Alinea los botones verticalmente */
+    margin-top: 20px;
+}
+
+  
+.button {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FFC107; /* Color amarillo vibrante */
+    border: none;
+    padding: 15px 30px;
+    margin: 10px auto; /* Auto aplica márgenes automáticos en los lados izquierdo y derecho */
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    align-items: center;
+    width: fit-content; /* Ajusta el ancho al contenido del botón */
+}
+
+  
+  .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.20);
+  }
+
+
+  .product-image {
+    width: 150px; /* Ancho fijo */
+    height: 150px; /* Alto fijo */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+    border-radius: 8px; /* Opcional: para bordes redondeados */
+    margin-bottom: 10px;
+}
+
+.product-detail {
+    margin-right: 30px; /* Espacio a la derecha de cada detalle */
+    margin-left: 30px; /* Espacio a la izquierda de cada detalle */
+}
+
+.button {
+    margin: 10px 5px; /* Espacio alrededor de los botones */
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+input[type="text"], textarea, select {
+    width: 100%; /* Hace que los campos ocupen todo el ancho disponible */
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding y border sean incluidos en el ancho total */
+}
+
+textarea {
+    height: 100px; /* Aumenta la altura del área de texto */
+    resize: vertical; /* Permite al usuario ajustar la altura del área de texto */
+}
+
+.button {
+    background-color: #FFC107;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto; /* Permite que el botón ajuste su tamaño al texto */
+}
+
+.button:hover {
+    background-color: #e0a800;
+}
+
+/* OpinionForm.css */
+
+.container, .opinions-page {
+    width: 600px; /* Ajusta según tus necesidades */
+    margin: auto;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.opinion-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.button {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FFC107; /* Color amarillo vibrante */
+    border: none;
+    padding: 15px 30px;
+    margin: 10px auto; /* Centra el botón */
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    display: block; /* Hace que el botón ocupe su propia línea */
+    width: fit-content; /* Ajusta el ancho al contenido del botón */
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.20);
+}
+
+.opinion-item p {
+    text-align: left; /* Alinea el texto a la izquierda dentro de los contenedores de opiniones */
+    margin-left: 10px; /* Agrega un poco de margen a la izquierda para mejor visualización */
+}
