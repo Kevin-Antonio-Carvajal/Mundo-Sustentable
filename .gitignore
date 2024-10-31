@@ -36,3 +36,9 @@ venv/
 
 # flask generated
 flask_session/
+
+# Ignorar la carpeta de módulos de Node.js
+App/frontend/node_modules/
+
+# Ignorar el entorno virtual de Python
+venv/
