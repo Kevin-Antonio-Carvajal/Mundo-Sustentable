@@ -1,0 +1,131 @@
+/* General container styling */
+.purchased-products-container {
+    padding: 20px;
+    background-color: #f4f4f9;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Page title styling */
+.page-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+/* Back button styling - placed below the title */
+.back-button {
+    background-color: #4fcef8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #3ab2da;
+}
+
+/* Product grid layout */
+.purchased-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Product card styling */
+.purchased-product-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.purchased-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.purchased-product-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchased-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.purchased-product-card:hover .purchased-product-image {
+    transform: scale(1.05);
+}
+
+/* Product details */
+.purchased-product-details {
+    padding: 15px;
+    text-align: left;
+}
+
+.product-name {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    color: #000000;
+}
+
+.product-description,
+.product-category,
+.product-contact {
+    font-size: 0.9em;
+    color: #000000;
+    margin: 5px 0;
+}
+
+/* Price styling */
+.product-price {
+    font-size: 1em;
+    color: #000000;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* Opinion button styling */
+.opinion-button {
+    background-color: #57ba21;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.opinion-button:hover {
+    background-color: #45a018;
+    transform: translateY(-2px);
+}
+
+/* No products message */
+.no-products-message {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 20px;
+}

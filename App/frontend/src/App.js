@@ -15,9 +15,9 @@ import OpinionsPage from './components/OpinionsPage';
 import './App.css';
 
 const Header = () => (
-  <div className="Header">
-    <img src="/images/mundo_sustentable.png" alt="Mundo Sustentable Logo" className="App-logo" />
-    <img src="/images/equipo_createc.png" alt="Equipo Createc Logo" className="Createc-logo" />
+  <div className="app-header">
+    <img src="/images/mundo_sustentable.png" alt="Mundo Sustentable Logo" className="app-logo" />
+    <img src="/images/equipo_createc.png" alt="Equipo Createc Logo" className="createc-logo" />
   </div>
 );
 
@@ -43,11 +43,11 @@ const WelcomePage = () => {
   };
 
   return (
-    <div className="Welcome">
+    <div className="welcome-page">
       <h2>Bienvenido a Mundo Sustentable</h2>
       <div className="button-container">
-        <Link className="button" to="/register">Registrarse</Link>
-        <Link className="button" to="/login">Iniciar Sesión</Link>
+        <Link className="app-button" to="/register">Registrarse</Link>
+        <Link className="app-button" to="/login">Iniciar Sesión</Link>
       </div>
       <div className="image-slider">
         <button className="slide-button" onClick={prevImage}>←</button>

@@ -6,11 +6,11 @@ const MenuPage = () => {
     const navigate = useNavigate();
   
     const goToProductForm = () => {
-      navigate('/product-form'); // Navega al formulario de alta de producto
+      navigate('/product-form');
     };
     
     const goToWelcome = () => {
-      navigate('/'); // Navega al formulario de alta de producto
+      navigate('/');
     };
 
     const goToMyProducts = () => {
@@ -18,15 +18,14 @@ const MenuPage = () => {
     };
 
     return (
-      <div className="Menu">
+      <div className="menu-page-container">
         <h2>Bienvenido, es hora de vender!</h2>
         <h4>Selecciona los botones para administrar tus productos</h4>
-        <button  onClick={goToProductForm} className="button">Alta de Producto</button>
-        <button onClick={goToMyProducts} className="button">Mis Productos</button>
-        <button  onClick={goToWelcome} className="button">Cerrar Sesión</button>
-
+        <button onClick={goToProductForm} className="menu-page-button">Alta de Producto</button>
+        <button onClick={goToMyProducts} className="menu-page-button">Mis Productos</button>
+        <button onClick={goToWelcome} className="menu-page-button">Cerrar Sesión</button>
       </div>
     );
-  };
-  
-  export default MenuPage;
+};
+
+export default MenuPage;

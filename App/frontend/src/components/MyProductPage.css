@@ -1,111 +1,153 @@
-.container {
-    width: 300px;
+.my-products-page { 
+    max-width: 1200px;
     margin: auto;
-    padding-top: 50px;
-}
-form {
-    display: flex;
-    flex-direction: column;
-}
-input[type=text], input[type=email], input[type=password], select {
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-}
-input[type=submit] {
-    padding: 10px;
-    background-color: #FFC107; /* Color amarillo vibrante */
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-input[type=submit]:hover {
-    background-color: #FFC107; /* Color amarillo vibrante */
-}
-
-.button-container {
-    display: flex;
-    justify-content: center; /* Centra los botones horizontalmente */
-    align-items: center; /* Centra los botones verticalmente si es necesario */
-    flex-direction: column; /* Alinea los botones verticalmente */
-    margin-top: 20px;
-}
-
-  
-.button {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #FFC107; /* Color amarillo vibrante */
-    border: none;
-    padding: 15px 30px;
-    margin: 10px auto; /* Auto aplica márgenes automáticos en los lados izquierdo y derecho */
-    border-radius: 5px;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 18px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    align-items: center;
-    width: fit-content; /* Ajusta el ancho al contenido del botón */
-}
-
-  
-  .button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.20);
-  }
-
-
-  .product-image {
-    width: 150px; /* Ancho fijo */
-    height: 150px; /* Alto fijo */
-    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
-    border-radius: 8px; /* Opcional: para bordes redondeados */
-    margin-bottom: 10px;
-}
-
-.product-detail {
-    margin-right: 30px; /* Espacio a la derecha de cada detalle */
-    margin-left: 30px; /* Espacio a la izquierda de cada detalle */
-}
-
-.button {
-    margin: 10px 5px; /* Espacio alrededor de los botones */
-}
-
-.product-item {
-    border: 1px solid #ccc;
     padding: 20px;
+    text-align: center;
+}
+
+.my-products-title {
+    font-size: 2em;
     margin-bottom: 20px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
+    color: #000000;
 }
 
-input[type="text"], textarea, select {
-    width: 100%; /* Hace que los campos ocupen todo el ancho disponible */
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Asegura que el padding y border sean incluidos en el ancho total */
-}
-
-textarea {
-    height: 100px; /* Aumenta la altura del área de texto */
-    resize: vertical; /* Permite al usuario ajustar la altura del área de texto */
-}
-
-.button {
-    background-color: #FFC107;
+.my-products-back-button {
+    background-color: #57ba21;
     color: white;
     padding: 10px 20px;
-    margin: 10px 0;
     border: none;
     border-radius: 5px;
+    margin-bottom: 20px;
     cursor: pointer;
-    width: auto; /* Permite que el botón ajuste su tamaño al texto */
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.button:hover {
-    background-color: #e0a800;
+.my-products-back-button:hover {
+    background-color: #4fcef8;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.my-products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.my-products-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    width: 320px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.my-products-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.my-products-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.my-products-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.my-products-details p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #000000;
+}
+
+.my-products-input-full, .my-products-textarea, .my-products-select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.my-products-button,
+.my-products-save-button,
+.my-products-edit-button,
+.my-products-delete-button,
+.my-products-opinions-button {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    color: white;
+}
+
+.my-products-button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.my-products-save-button {
+    background-color: #57ba21;
+}
+
+.my-products-edit-button {
+    background-color: #ffc107;
+}
+
+.my-products-delete-button {
+    background-color: #f44336;
+}
+
+.my-products-opinions-button {
+    background-color: #4CAF50;
+}
+
+.my-products-save-button:hover, 
+.my-products-edit-button:hover, 
+.my-products-delete-button:hover, 
+.my-products-opinions-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.20);
+}
+
+.my-products-empty-message {
+    font-size: 1.2em;
+    color: #000000;
+    margin-top: 30px;
+}
+
+.my-products-image-button {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.9em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.my-products-image-button:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
 }

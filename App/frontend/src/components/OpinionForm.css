@@ -1,153 +1,84 @@
-.container {
-    width: 300px;
-    margin: auto;
-    padding-top: 50px;
-}
-form {
-    display: flex;
-    flex-direction: column;
-}
-input[type=text], input[type=email], input[type=password], select {
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-}
-input[type=submit] {
-    padding: 10px;
-    background-color: #FFC107; /* Color amarillo vibrante */
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-input[type=submit]:hover {
-    background-color: #FFC107; /* Color amarillo vibrante */
-}
-
-.button-container {
-    display: flex;
-    justify-content: center; /* Centra los botones horizontalmente */
-    align-items: center; /* Centra los botones verticalmente si es necesario */
-    flex-direction: column; /* Alinea los botones verticalmente */
-    margin-top: 20px;
-}
-
-  
-.button {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #FFC107; /* Color amarillo vibrante */
-    border: none;
-    padding: 15px 30px;
-    margin: 10px auto; /* Auto aplica márgenes automáticos en los lados izquierdo y derecho */
-    border-radius: 5px;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 18px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    align-items: center;
-    width: fit-content; /* Ajusta el ancho al contenido del botón */
-}
-
-  
-  .button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.20);
-  }
-
-
-  .product-image {
-    width: 150px; /* Ancho fijo */
-    height: 150px; /* Alto fijo */
-    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
-    border-radius: 8px; /* Opcional: para bordes redondeados */
-    margin-bottom: 10px;
-}
-
-.product-detail {
-    margin-right: 30px; /* Espacio a la derecha de cada detalle */
-    margin-left: 30px; /* Espacio a la izquierda de cada detalle */
-}
-
-.button {
-    margin: 10px 5px; /* Espacio alrededor de los botones */
-}
-
-.product-item {
-    border: 1px solid #ccc;
+.opinion-form-container {
+    max-width: 500px;
+    margin: 40px auto;
     padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
     background-color: #f9f9f9;
-}
-
-input[type="text"], textarea, select {
-    width: 100%; /* Hace que los campos ocupen todo el ancho disponible */
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Asegura que el padding y border sean incluidos en el ancho total */
-}
-
-textarea {
-    height: 100px; /* Aumenta la altura del área de texto */
-    resize: vertical; /* Permite al usuario ajustar la altura del área de texto */
-}
-
-.button {
-    background-color: #FFC107;
-    color: white;
-    padding: 10px 20px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: auto; /* Permite que el botón ajuste su tamaño al texto */
-}
-
-.button:hover {
-    background-color: #e0a800;
-}
-
-/* OpinionForm.css */
-
-.container, .opinions-page {
-    width: 600px; /* Ajusta según tus necesidades */
-    margin: auto;
-    padding-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000000;
     text-align: center;
 }
 
-.opinion-item {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    padding: 20px;
+h1 {
+    font-size: 1.8em;
     margin-bottom: 20px;
-    border-radius: 10px;
+    color: #000000;
 }
 
-.button {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #FFC107; /* Color amarillo vibrante */
-    border: none;
-    padding: 15px 30px;
-    margin: 10px auto; /* Centra el botón */
-    border-radius: 5px;
-    color: white;
+.opinion-form-message {
+    color: #28a745; /* Verde para éxito */
+    margin-bottom: 15px;
+}
+
+.opinion-form-message.error {
+    color: #d32f2f; /* Rojo para error */
+}
+
+.opinion-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.opinion-form-label {
+    text-align: left;
     font-weight: 500;
-    font-size: 18px;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.opinion-form-input,
+.opinion-form-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #000000;
+}
+
+.opinion-form-textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.opinion-form-button {
+    background-color: #57ba21;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
     cursor: pointer;
-    display: block; /* Hace que el botón ocupe su propia línea */
-    width: fit-content; /* Ajusta el ancho al contenido del botón */
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px; /* Ajusta el espacio debajo del botón */
 }
 
-.button:hover {
+.opinion-form-button:hover {
+    background-color: #4fcef8;
     transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.20);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.opinion-item p {
-    text-align: left; /* Alinea el texto a la izquierda dentro de los contenedores de opiniones */
-    margin-left: 10px; /* Agrega un poco de margen a la izquierda para mejor visualización */
+button {
+    margin-top: 15px;
+}
+
+button + button {
+    margin-left: 10px;
 }

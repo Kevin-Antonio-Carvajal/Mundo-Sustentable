@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './PurchasedProductsPage.css';
 
 const PurchasedProductsPage = () => {
     const [productos, setProductos] = useState([]);
@@ -28,25 +29,34 @@ const PurchasedProductsPage = () => {
     }, [navigate]);
 
     return (
-        <div className="purchased-products-list">
-            <button onClick={() => navigate(-1)} className="button">Regresar</button>
-            {productos.length > 0 ? (
-                productos.map(producto => (
-                    <div className="product-item" key={producto.id}>
-                        <img src={producto.imagen ? `http://localhost:5000/uploads/${encodeURIComponent(producto.imagen.split('/').pop())}` : "placeholder-image.png"} alt={producto.nombre} className="product-image" />
-                        <div className="product-details">
-                            <div className="product-name">{producto.nombre}</div>
-                            <div className="product-description">{producto.descripcion}</div>
-                            <div>Categoria: {producto.categoria}</div>
-                            <div>Contacto: {producto.contacto}</div>
-                            <div>Precio: ${producto.precio}</div>
-                            <button onClick={() => navigate(`/agregar-opinion/${producto.id}`)} className="button">Agregar Opinión</button>
+        <div className="purchased-products-container">
+            <h2 className="page-title">Productos Comprados</h2>
+            <button onClick={() => navigate(-1)} className="back-button">Regresar</button>
+            <div className="purchased-product-grid">
+                {productos.length > 0 ? (
+                    productos.map(producto => (
+                        <div className="purchased-product-card" key={producto.id}>
+                            <div className="purchased-product-image-container">
+                                <img 
+                                    src={producto.imagen ? `http://localhost:5000/uploads/${encodeURIComponent(producto.imagen.split('/').pop())}` : "placeholder-image.png"} 
+                                    alt={producto.nombre} 
+                                    className="purchased-product-image" 
+                                />
+                            </div>
+                            <div className="purchased-product-details">
+                                <h3 className="product-name">Título: {producto.nombre}</h3>
+                                <p className="product-description"><strong>Descripción:</strong> {producto.descripcion}</p>
+                                <p className="product-category"><strong>Categoría:</strong> {producto.categoria}</p>
+                                <p className="product-contact"><strong>Contacto:</strong> {producto.contacto}</p>
+                                <p className="product-price"><strong>Precio:</strong> ${producto.precio}</p>
+                                <button onClick={() => navigate(`/agregar-opinion/${producto.id}`)} className="opinion-button">Agregar Opinión</button>
+                            </div>
                         </div>
-                    </div>
-                ))
-            ) : (
-                <div>No has comprado productos aún.</div>
-            )}
+                    ))
+                ) : (
+                    <div className="no-products-message">No has comprado productos aún.</div>
+                )}
+            </div>
         </div>
     );
 };

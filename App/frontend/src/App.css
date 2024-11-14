@@ -1,47 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@500;700&display=swap');
 
-/* Estilos generales de la aplicación */
-.App {
+/* General styles */
+.app {
   text-align: center;
   font-family: 'Roboto', sans-serif;
 }
 
-/* Cabecera */
-.Header {
+/* Header styles */
+.app-header {
   background-color: transparent;
   color: #333;
-  padding: 10px 20px; /* Espaciado a los lados */
+  padding: 10px 20px;
   display: flex;
-  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+  justify-content: space-between;
   align-items: center;
 }
 
-.Createc-logo {
+.createc-logo {
   height: 90px;
 }
 
-/* Logo de la cabecera */
-.App-logo {
+.app-logo {
   height: 100px;
   margin-right: 10px;
 }
-
-.auth-button {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #57ba21;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: white;
-  font-weight: 500;
-  transition: background-color 0.3s;
-}
-
-.auth-button:hover {
-  background-color: #45a018;
-}
-
 
 .auth-buttons-container {
   display: flex;
@@ -52,37 +35,29 @@
   margin: 0 auto;
 }
 
-/* Estilo del título de la cabecera */
-.title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #005792;
-}
-
-/* Página de bienvenida */
-.Welcome h2 {
+/* Welcome page */
+.welcome-page h2 {
   margin-top: 20px;
   font-size: 36px;
   font-weight: 700;
-  color: #000; /* Color negro */
-  text-align: center; /* Centrado */
+  color: #000;
+  text-align: center;
   padding: 20px 0;
 }
 
-
-/* Contenedor de botones */
+/* Button container */
 .button-container {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
-  flex-direction: row; /* Asegura que los botones estén en una sola fila */
+  flex-direction: row;
 }
 
-/* Botones */
-.button {
+/* Buttons */
+.app-button {
   font-family: 'Montserrat', sans-serif;
-  background-color: #57ba21; /* Verde predeterminado */
+  background-color: #57ba21;
   border: none;
   padding: 15px 30px;
   margin: 10px;
@@ -94,16 +69,16 @@
   transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.button:hover {
-  background-color: #4fcef8; /* Azul claro en hover */
+.app-button:hover {
+  background-color: #4fcef8;
   transform: translateY(-3px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.20);
 }
 
-/* Carrusel de imágenes */
+/* Image slider */
 .image-slider {
   width: 100%;
-  height: 50vh; /* Ocupa el 80% de la altura de la pantalla */
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +100,7 @@
 }
 
 .slide-button:hover {
-  background: #57ba21;
+  background: #45a018;
 }
 
 .slide-button:first-of-type {
@@ -139,7 +114,7 @@
 .image-slider img {
   width: 80%;
   height: 80%;
-  object-fit: contain; /* Asegura que la imagen completa se muestre sin recortes */
+  object-fit: contain;
   transition: opacity 0.3s ease-in-out;
 }
 

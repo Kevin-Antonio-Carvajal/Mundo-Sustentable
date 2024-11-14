@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
-import './ProductListPage.css'; // Asegúrate de que el archivo CSS esté correctamente vinculado
+import './ProductListPage.css';
 import { useNavigate } from 'react-router-dom';
 
 const ProductListPage = () => {
@@ -25,11 +25,11 @@ const ProductListPage = () => {
         } catch (error) {
             console.error("Error cargando los productos", error);
         }
-    }, [navigate, searchCategory]); // Añade navigate y searchCategory como dependencias
+    }, [navigate, searchCategory]);
 
     useEffect(() => {
         fetchProductos();
-    }, [fetchProductos]); // Ahora fetchProductos es una dependencia, por lo que se incluye aquí
+    }, [fetchProductos]);
 
     const handleCategoryChange = (e) => {
         setSearchCategory(e.target.value);
@@ -60,9 +60,9 @@ const ProductListPage = () => {
     };
 
     return (
-        <div className="product-list">
-            <div className="search-container">
-                <select value={searchCategory} onChange={handleCategoryChange} className="category-select">
+        <div className="product-list-page">
+            <div className="search-bar">
+                <select value={searchCategory} onChange={handleCategoryChange} className="search-select">
                     <option value="">Seleccione una categoría</option>
                     <option value="electronica">Electrónica</option>
                     <option value="alimentos">Alimentos</option>
@@ -81,27 +81,37 @@ const ProductListPage = () => {
                     <option value="automotriz">Accesorios Automotrices</option>
                     <option value="musica">Música y Audio</option>
                 </select>
-                <button onClick={handleSearchClick} className="button">Buscar</button>
+                <button onClick={handleSearchClick} className="search-button">Buscar</button>
             </div>
-            <button onClick={() => navigate(-1)} className="button">Regresar</button>
-            {productos.length > 0 ? (
-                productos.map(producto => (
-                    <div className="product-item" key={producto.id}>
-                        <img src={producto.imagen ? `http://localhost:5000/uploads/${encodeURIComponent(producto.imagen.split('/').pop())}` : "placeholder-image.png"} alt={producto.nombre} className="product-image" />
-                        <div className="product-details">
-                            <div className="product-name">{producto.nombre}</div>
-                            <div className="product-description">{producto.descripcion}</div>
-                            <div>
-                                <button onClick={() => navigate(`/producto/${producto.id}`)} className="button">Ver Detalles</button>
-                                <button onClick={() => navigate(`/producto/${producto.id}/opiniones`)} className="button">Ver Opiniones</button>
-                                <button onClick={() => handleBuy(producto.id)} className="button">Comprar</button>
+            <button onClick={() => navigate(-1)} className="back-button">Regresar</button>
+            <div className="product-grid">
+                {productos.length > 0 ? (
+                    productos.map(producto => (
+                        <div className="product-card" key={producto.id}>
+                            <div className="product-image-container">
+                                <img 
+                                    src={producto.imagen ? `http://localhost:5000/uploads/${encodeURIComponent(producto.imagen.split('/').pop())}` : "placeholder-image.png"} 
+                                    alt={producto.nombre} 
+                                    className="product-image" 
+                                />
+                            </div>
+                            <div className="product-info">
+                                <h3 className="product-title">Título: {producto.titulo}</h3>
+                                <p className="product-description"><strong>Descripción:</strong> {producto.descripcion}</p>
+                                <p className="product-category"><strong>Categoría:</strong> {producto.categoria}</p>
+                                <p className="product-contact"><strong>Contacto:</strong> {producto.contacto}</p>
+                                <p className="product-price"><strong>Precio:</strong> ${producto.precio}</p>
+                                <div className="button-group">
+                                    <button onClick={() => handleBuy(producto.id)} className="buy-button">Comprar</button>
+                                    <button onClick={() => navigate(`/producto/${producto.id}/opiniones`)} className="view-opinions-button">Ver Opiniones</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))
-            ) : (
-                <div>No hay productos disponibles.</div>
-            )}
+                    ))
+                ) : (
+                    <div>No hay productos disponibles.</div>
+                )}
+            </div>
         </div>
     );
 };

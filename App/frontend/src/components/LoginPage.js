@@ -6,13 +6,13 @@ import './LoginPage.css';
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [role, setRole] = useState('comprador'); // Estado inicial para el rol
+    const [role, setRole] = useState('comprador');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleUsernameChange = (e) => setUsername(e.target.value);
     const handlePasswordChange = (e) => setPassword(e.target.value);
-    const handleRoleChange = (e) => setRole(e.target.value); // Manejar cambio de rol
+    const handleRoleChange = (e) => setRole(e.target.value);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,13 +20,12 @@ const LoginPage = () => {
             const response = await axios.post('http://localhost:5000/auth/login', { username, password, role });
             console.log('Login successful:', response.data);
             if (response.data.access_token) {
-                localStorage.setItem('token', response.data.access_token); // Almacenamiento del token en localStorage
-                localStorage.setItem('role', response.data.role); // Almacenamiento del rol en localStorage si es necesario
-                // Redirige al usuario basado en el rol
+                localStorage.setItem('token', response.data.access_token);
+                localStorage.setItem('role', response.data.role);
                 if (role === 'comprador') {
                     navigate('/home');
                 } else if (role === 'vendedor') {
-                    navigate('/menu'); // Asume que tienes una ruta '/menu' para los vendedores.
+                    navigate('/menu');
                 }
             } else {
                 setError('Login Failed: No token received.');
@@ -38,9 +37,9 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="container">
+        <div className="login-page-container">
             <h2>Iniciar Sesión</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="login-page-form">
                 <input
                     type="text"
                     name="username"
@@ -48,6 +47,7 @@ const LoginPage = () => {
                     onChange={handleUsernameChange}
                     placeholder="Usuario"
                     required
+                    className="login-page-input"
                 />
                 <input
                     type="password"
@@ -56,16 +56,17 @@ const LoginPage = () => {
                     onChange={handlePasswordChange}
                     placeholder="Contraseña"
                     required
+                    className="login-page-input"
                 />
-                <select name="role" value={role} onChange={handleRoleChange} required>
+                <select name="role" value={role} onChange={handleRoleChange} required className="login-page-select">
                     <option value="comprador">Comprador</option>
                     <option value="vendedor">Vendedor</option>
                 </select>
-                <div className="button-group">
-                    <button type="submit" className="button">Iniciar Sesión</button>
-                    <button type="button" onClick={() => navigate(-1)} className="button">Regresar</button>
+                <div className="login-page-button-group">
+                    <button type="submit" className="login-page-button">Iniciar Sesión</button>
+                    <button type="button" onClick={() => navigate(-1)} className="login-page-button">Regresar</button>
                 </div>
-                {error && <p className="error-message">{error}</p>}
+                {error && <p className="login-page-error-message">{error}</p>}
             </form>
         </div>
     );

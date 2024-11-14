@@ -41,17 +41,17 @@ const ProductDetailsPage = () => {
     }
 
     return (
-        <div className="details-container">
+        <div className="product-details-container">
             <h1>Detalles del Producto</h1>
-            <img src={producto.imagen ? `http://localhost:5000/uploads/${encodeURIComponent(producto.imagen.split('/').pop())}` : "placeholder-imagen.png"} alt={producto.nombre} className="product-image" />
-            <div className="product-details">
+            <img src={producto.imagen ? `http://localhost:5000/uploads/${encodeURIComponent(producto.imagen.split('/').pop())}` : "placeholder-imagen.png"} alt={producto.nombre} className="product-details-image" />
+            <div className="product-details-info">
                 <h2>{producto.titulo}</h2>
                 <p>{producto.descripcion}</p>
                 <p>Categoría: {producto.categoria}</p>
                 <p>Contacto: {producto.contacto}</p>
                 <p>Precio: ${producto.precio}</p>
             </div>
-            <button onClick={() => navigate(-1)} className="button">Regresar</button>
+            <button onClick={() => navigate(-1)} className="product-details-button">Regresar</button>
         </div>
     );
 };

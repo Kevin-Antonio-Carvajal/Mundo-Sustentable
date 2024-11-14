@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
+import './EditProductPage.css';
 
 const EditProductPage = () => {
   const { productId } = useParams();
@@ -48,16 +49,16 @@ const EditProductPage = () => {
   };
 
   return (
-    <div>
+    <div className="edit-product-container">
       <h1>Editar Producto</h1>
-      {mensaje && <p>{mensaje}</p>}
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder="Título" required />
-        <textarea value={descripcion} onChange={(e) => setDescripcion(e.target.value)} placeholder="Descripción" required></textarea>
-        <input type="text" value={categoria} onChange={(e) => setCategoria(e.target.value)} placeholder="Categoría" required />
-        <input type="text" value={contacto} onChange={(e) => setContacto(e.target.value)} placeholder="Contacto" required />
-        <input type="number" value={precio} onChange={(e) => setPrecio(e.target.value)} placeholder="Precio" required />
-        <button type="submit">Actualizar Producto</button>
+      {mensaje && <p className="edit-product-message">{mensaje}</p>}
+      <form onSubmit={handleSubmit} className="edit-product-form">
+        <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder="Título" required className="edit-product-input" />
+        <textarea value={descripcion} onChange={(e) => setDescripcion(e.target.value)} placeholder="Descripción" required className="edit-product-textarea"></textarea>
+        <input type="text" value={categoria} onChange={(e) => setCategoria(e.target.value)} placeholder="Categoría" required className="edit-product-input" />
+        <input type="text" value={contacto} onChange={(e) => setContacto(e.target.value)} placeholder="Contacto" required className="edit-product-input" />
+        <input type="number" value={precio} onChange={(e) => setPrecio(e.target.value)} placeholder="Precio" required className="edit-product-input" />
+        <button type="submit" className="edit-product-button">Actualizar Producto</button>
       </form>
     </div>
   );

@@ -24,7 +24,6 @@ const OpinionForm = () => {
                 }
             });
             setMensaje('Opinión añadida con éxito');
-            setTimeout(() => navigate('/productos-comprados'), 2000);
         } catch (error) {
             console.error('Error añadiendo la opinión:', error.response ? error.response.data : error.message);
             setMensaje('Error añadiendo la opinión');
@@ -32,15 +31,16 @@ const OpinionForm = () => {
     };
 
     return (
-        <div>
+        <div className="opinion-form-container">
             <h1>Agregar Opinión</h1>
-            <button onClick={() => navigate(-1)} className="button">Regresar</button>
-            {mensaje && <p>{mensaje}</p>}
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="calificacion">Calificación del producto (1 a 5):</label>
+            <button onClick={() => navigate(-1)} className="opinion-form-button">Regresar</button>
+            {mensaje && <p className={`opinion-form-message ${mensaje.includes('éxito') ? 'success' : 'error'}`}>{mensaje}</p>}
+            <form onSubmit={handleSubmit} className="opinion-form">
+                <label htmlFor="calificacion" className="opinion-form-label">Calificación del producto (1 a 5):</label>
                 <input
                     type="number"
                     id="calificacion"
+                    className="opinion-form-input"
                     value={calificacion}
                     onChange={(e) => setCalificacion(e.target.value)}
                     placeholder="Ej. 4"
@@ -48,15 +48,16 @@ const OpinionForm = () => {
                     min="1"
                     max="5"
                 />
-                <label htmlFor="comentario">Comentario sobre el producto:</label>
+                <label htmlFor="comentario" className="opinion-form-label">Comentario sobre el producto:</label>
                 <textarea
                     id="comentario"
+                    className="opinion-form-textarea"
                     value={comentario}
                     onChange={(e) => setComentario(e.target.value)}
                     placeholder="Escribe aquí tu experiencia con el producto"
                     required
                 />
-                <button type="submit" className='button'>Enviar Opinión</button>
+                <button type="submit" className='opinion-form-button'>Enviar Opinión</button>
             </form>
         </div>
     );

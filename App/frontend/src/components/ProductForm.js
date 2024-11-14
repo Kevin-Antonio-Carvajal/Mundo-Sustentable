@@ -11,13 +11,14 @@ const ProductForm = () => {
   const [contacto, setContacto] = useState('');
   const [precio, setPrecio] = useState('');
   const [mensaje, setMensaje] = useState('');
+  const [isSuccess, setIsSuccess] = useState(null); 
 
   const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {
-      navigate('/login'); // Redirige al usuario a la página de login si no está autenticado
+      navigate('/login');
     }
   }, [navigate]);
 
@@ -41,16 +42,14 @@ const ProductForm = () => {
         },
       });
       setMensaje("Producto registrado con éxito: " + response.data.message);
+      setIsSuccess(true);
       setTimeout(() => navigate('/menu'), 2000);
     } catch (error) {
-      if (error.response && error.response.data && error.response.data.message) {
-        setMensaje("Error al registrar el producto: " + error.response.data.message);
-      } else if (error.response && error.response.data) {
-        const errors = error.response.data.errors ? Object.values(error.response.data.errors).join(', ') : '';
-        setMensaje("Error al registrar el producto. Por favor, verifica los datos ingresados. " + errors);
-      } else {
-        setMensaje("Error al registrar el producto: Ha ocurrido un problema de conexión.");
-      }
+      const errorMessage = error.response && error.response.data && error.response.data.message
+        ? error.response.data.message
+        : "Error al registrar el producto. Intente de nuevo.";
+      setMensaje(errorMessage);
+      setIsSuccess(false);
     }
   };
 
@@ -61,7 +60,8 @@ const ProductForm = () => {
       setMensaje('');
     } else {
       setMensaje("Solo se permiten archivos JPG o PNG.");
-      event.target.value = null; // Reset del input file
+      setIsSuccess(false);
+      event.target.value = null;
     }
   };
 
@@ -70,15 +70,24 @@ const ProductForm = () => {
   };
 
   return (
-    <div className="form-container">
+    <div className="product-form-container">
       <h1>Alta de Productos</h1>
-      {mensaje && <div className="mensaje">{mensaje}</div>}
+      {mensaje && (
+        <div className={`product-form-message ${isSuccess ? 'success' : 'error'}`}>
+          {mensaje}
+        </div>
+      )}
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder="Título" required />
         <input type="text" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} placeholder="Descripción" required />
-        <button type="button" className="button" onClick={() => document.getElementById('fileInput').click()}>Seleccionar Archivo</button>
+        
+        <div className="file-button-group">
+          <button type="button" className="product-form-button" onClick={() => document.getElementById('fileInput').click()}>Seleccionar Archivo</button>
+          {foto && <button type="button" onClick={removePhoto} className="product-form-button remove-button">Quitar Foto</button>}
+        </div>
+        
         <input type="file" id="fileInput" onChange={handleFileChange} accept="image/jpeg, image/png" style={{ display: 'none' }} required />
-        {foto && <button type="button" onClick={removePhoto} className="button remove-button">Quitar Foto</button>}
+
         <select value={categoria} onChange={(e) => setCategoria(e.target.value)} required>
           <option value="">Seleccione una categoría</option>
           <option value="electronica">Electrónica</option>
@@ -98,10 +107,14 @@ const ProductForm = () => {
           <option value="automotriz">Accesorios Automotrices</option>
           <option value="musica">Música y Audio</option>
         </select>
+
         <input type="text" value={contacto} onChange={(e) => setContacto(e.target.value)} placeholder="Contacto (correo)" required />
         <input type="number" value={precio} onChange={(e) => setPrecio(e.target.value)} placeholder="Precio MXN" step="1.00" min="1" required />
-        <button className='button' type="submit">Registrar Producto</button>
-        <button onClick={() => navigate(-1)} className="button">Regresar</button>
+        
+        <div className="product-form-button-group">
+          <button className='product-form-button' type="submit">Registrar Producto</button>
+          <button onClick={() => navigate(-1)} className="product-form-button">Regresar</button>
+        </div>
       </form>
     </div>
   );

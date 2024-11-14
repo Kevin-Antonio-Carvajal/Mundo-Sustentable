@@ -1,90 +1,42 @@
-.container {
-    width: 300px;
-    margin: auto;
-    padding-top: 50px;
-}
-form {
+.product-details-container {
     display: flex;
     flex-direction: column;
-}
-input[type=text], input[type=email], input[type=password], select {
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-}
-input[type=submit] {
-    padding: 10px;
-    background-color: #FFC107; /* Color amarillo vibrante */
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-input[type=submit]:hover {
-    background-color: #FFC107; /* Color amarillo vibrante */
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding-top: 50px;
+    width: 80%;
 }
 
-.button-container {
-    display: flex;
-    justify-content: center; /* Centra los botones horizontalmente */
-    align-items: center; /* Centra los botones verticalmente si es necesario */
-    flex-direction: column; /* Alinea los botones verticalmente */
-    margin-top: 20px;
+.product-details-image {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-  
-.button {
+.product-details-info {
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+
+.product-details-button {
     font-family: 'Montserrat', sans-serif;
-    background-color: #FFC107; /* Color amarillo vibrante */
+    background-color: #FFC107;
     border: none;
     padding: 15px 30px;
-    margin: 10px auto; /* Auto aplica márgenes automáticos en los lados izquierdo y derecho */
+    margin: 10px auto;
     border-radius: 5px;
     color: white;
     text-decoration: none;
     font-weight: 500;
     font-size: 18px;
     transition: transform 0.3s, box-shadow 0.3s;
-    align-items: center;
-    width: fit-content; /* Ajusta el ancho al contenido del botón */
+    cursor: pointer;
 }
 
-  
-  .button:hover {
+.product-details-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.20);
-  }
-
-  .Menu {
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh; /* Utiliza el alto total de la ventana del navegador */
-    padding: 20px;
-  }
-
-.details-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra los elementos horizontalmente */
-    justify-content: center; /* Centra los elementos verticalmente */
-    margin: auto;
-    padding-top: 50px;
-    width: 80%; /* Ajusta el ancho según necesidades específicas */
-}
-
-/* Estilo para imágenes del producto para asegurar que se vean bien */
-.product-image {
-    width: 50%; /* Ajusta según la necesidad */
-    height: auto;
-    border-radius: 10px; /* Opcional, para bordes redondeados */
-    margin-bottom: 20px;
-}
-
-/* Estilos adicionales para la claridad y estética del texto */
-.product-details {
-    text-align: center; /* Alinea el texto al centro */
-    line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
-    font-size: 1.2rem; /* Tamaño de fuente adecuado */
 }
