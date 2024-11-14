@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Paso 1: Importar useNavigate
+import { useNavigate } from 'react-router-dom';
 import './RegisterPage.css';
 
 const RegisterPage = () => {
@@ -14,16 +14,14 @@ const RegisterPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setMessage(''); // Limpiar mensajes previos
+        setMessage('');
 
-        // Validar teléfono (debe ser un número de 10 dígitos)
         const phoneRegex = /^[0-9]{10}$/;
         if (!phoneRegex.test(phone)) {
             alert('El número de teléfono debe tener 10 dígitos.');
             return;
         }
 
-        // Validar longitud del nombre de usuario
         if (username.length < 3 || username.length > 20) {
             alert('El nombre de usuario debe tener entre 3 y 20 caracteres.');
             return;
@@ -38,11 +36,10 @@ const RegisterPage = () => {
                 role
             });
             console.log(response.data);
-            alert('Usuario registrado con éxito.'); // Establece el mensaje de éxito
-            setTimeout(() => navigate('/'), 500); // Redirecciona después de 2 segundos
+            alert('Usuario registrado con éxito.');
+            setTimeout(() => navigate('/'), 500);
         } catch (error) {
             if (error.response && error.response.data) {
-                // Suponiendo que el servidor envía el mensaje en error.response.data.alert
                 alert(`Error al registrar: ${error.response.data.alert}`);
             } else {
                 alert('Error al registrar usuario. Intente de nuevo.');
@@ -55,32 +52,57 @@ const RegisterPage = () => {
         <div className="container">
             <h2>Registro de Usuario</h2>
             <form onSubmit={handleSubmit}>
-                <label for="nombre">
-                    Usuario:
-                    <input type="text" id="nombre" value={username} onChange={(e) => setUsername(e.target.value)} />
-                </label>
-                <label for="email">
-                    Correo electrónico:
-                    <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                </label>
-                <label for="password">
-                    Contraseña:
-                    <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </label>
-                <label for="telefono">
-                    Teléfono:
-                    <input type="text" id="telefono" value={phone} onChange={(e) => setPhone(e.target.value)} />
-                </label>
-                <label for="rol">
-                    Rol:
-                    <select id="rol" value={role} onChange={(e) => setRole(e.target.value)}>
-                        <option value="">Selecciona un rol</option>
+                <div className="form-group">
+                    <label htmlFor="nombre">Usuario:</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="email">Correo electrónico:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="password">Contraseña:</label>
+                    <input
+                        type="password"
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="telefono">Teléfono:</label>
+                    <input
+                        type="text"
+                        id="telefono"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="rol">Rol:</label>
+                    <select
+                        id="rol"
+                        value={role}
+                        onChange={(e) => setRole(e.target.value)}
+                    >
                         <option value="comprador">Comprador</option>
                         <option value="vendedor">Vendedor</option>
                     </select>
-                </label>
-                <button type="submit" className="button">Registrar</button>
-                <button onClick={() => navigate(-1)} className="button">Regresar</button>
+                </div>
+                <div className="button-group">
+                    <button type="submit" className="button">Registrar</button>
+                    <button type="button" onClick={() => navigate(-1)} className="button">Regresar</button>
+                </div>
                 {message && <p className="error-message">{message}</p>}
             </form>
         </div>

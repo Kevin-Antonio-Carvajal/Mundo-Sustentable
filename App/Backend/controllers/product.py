@@ -133,7 +133,7 @@ def comprar():
 
 def send_purchase_email(user_email, product_title):
     msg = Message('Confirmación de Compra', 
-                  sender='webaholics82@gmail.com', 
+                  sender='MScreatec@gmail.com', 
                   recipients=[user_email])
     msg.body = f'Has comprado el producto: {product_title}. Gracias por tu compra!'
     mail.send(msg)

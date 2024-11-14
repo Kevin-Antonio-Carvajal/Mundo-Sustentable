@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import RegisterPage from './components/RegisterPage';
 import LoginPage from './components/LoginPage';
@@ -9,21 +9,20 @@ import ProductListPage from './components/ProductListPage';
 import ProductDetailsPage from './components/ProductDetailsPage';
 import MyProductsPage from './components/MyProductsPage';
 import EditProductPage from './components/EditProductPage';
-import PurchasedProductsPage from './components/PurchasedProductsPage'; // Importa la nueva página
+import PurchasedProductsPage from './components/PurchasedProductsPage';
 import OpinionForm from './components/OpinionForm';
 import OpinionsPage from './components/OpinionsPage';
 import './App.css';
 
 const Header = () => (
   <div className="Header">
-    <img src="/images/Logo.png" alt="Webaholics Logo" className="App-logo" />
-    <h3 className="by-webaholics"> by Webaholics</h3>
+    <img src="/images/mundo_sustentable.png" alt="Mundo Sustentable Logo" className="App-logo" />
+    <img src="/images/equipo_createc.png" alt="Equipo Createc Logo" className="Createc-logo" />
   </div>
 );
 
-
 const WelcomePage = () => {
-  const images = ['/images/logoFCpng', '/images/inicio.jpg', '/images/biblio.jpg', '/images/magno.jpg'];
+  const images = ['/images/logoFCpng', '/images/inicio.jpg', '/images/magno.jpg'];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
 
@@ -32,25 +31,23 @@ const WelcomePage = () => {
     setTimeout(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
       setIsVisible(true);
-    }, 300); // Coincide con la duración de la animación de salida
+    }, 300);
   };
 
   const prevImage = () => {
     setIsVisible(false);
     setTimeout(() => {
-      setCurrentImageIndex((prevIndex) => 
-        (prevIndex - 1 + images.length) % images.length
-      );
+      setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
       setIsVisible(true);
-    }, 300); // Coincide con la duración de la animación de salida
+    }, 300);
   };
 
   return (
     <div className="Welcome">
-      <h2>Bienvenido a Market-Ciencias</h2>
+      <h2>Bienvenido a Mundo Sustentable</h2>
       <div className="button-container">
         <Link className="button" to="/register">Registrarse</Link>
-        <Link className="button" to="/login">Inciar Sesión</Link>
+        <Link className="button" to="/login">Iniciar Sesión</Link>
       </div>
       <div className="image-slider">
         <button className="slide-button" onClick={prevImage}>←</button>
@@ -74,15 +71,15 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/home" element={<HomePage />} />
-        <Route path="/menu" element={<MenuPage />} /> {/* Nueva ruta al menú */}
+        <Route path="/menu" element={<MenuPage />} />
         <Route path="/product-form" element={<ProductForm />} />
-        <Route path="/productos" element={<ProductListPage />} /> {/* Nueva ruta para mostrar los productos */}
+        <Route path="/productos" element={<ProductListPage />} />
         <Route path="/producto/:productId" element={<ProductDetailsPage />} />
         <Route path="/mis-productos" element={<MyProductsPage />} />
         <Route path="/editar-producto/:productId" element={<EditProductPage />} />
-        <Route path="/productos-comprados" element={<PurchasedProductsPage />} /> {/* Agrega la nueva ruta */}
-        <Route path="/agregar-opinion/:productoId" element={<OpinionForm />} /> {/* Nueva ruta para agregar opiniones */}
-        <Route path="/producto/:productoId/opiniones" element={<OpinionsPage />} /> // Nueva ruta para ver opiniones
+        <Route path="/productos-comprados" element={<PurchasedProductsPage />} />
+        <Route path="/agregar-opinion/:productoId" element={<OpinionForm />} />
+        <Route path="/producto/:productoId/opiniones" element={<OpinionsPage />} />
       </Routes>
     </Router>
   );

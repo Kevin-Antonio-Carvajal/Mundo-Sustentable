@@ -9,10 +9,10 @@ from controllers.extensions import mail
 auth = Blueprint('auth', __name__)
 
 def send_registration_email(user_email):
-    msg = Message('Bienvenido a Market Ciencias :)', 
-                  sender='webaholics82@gmail.com', 
+    msg = Message('Bienvenido a Market Mundo Sustentable :)', 
+                  sender='MScreatec@gmail.com', 
                   recipients=[user_email])
-    msg.body = 'Gracias por tu registro, ahora puedes conseguir productos en Ciencias fácil y rápido! :)'
+    msg.body = 'Gracias por tu registro, ahora puedes conseguir productos sustentables fácil y rápido! :)'
     mail.send(msg)
 
 @auth.route('/register', methods=['POST'])

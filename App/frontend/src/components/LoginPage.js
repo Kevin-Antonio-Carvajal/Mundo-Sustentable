@@ -41,14 +41,30 @@ const LoginPage = () => {
         <div className="container">
             <h2>Iniciar Sesión</h2>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="username" value={username} onChange={handleUsernameChange} placeholder="Usuario" required />
-                <input type="password" name="password" value={password} onChange={handlePasswordChange} placeholder="Contraseña" required />
+                <input
+                    type="text"
+                    name="username"
+                    value={username}
+                    onChange={handleUsernameChange}
+                    placeholder="Usuario"
+                    required
+                />
+                <input
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={handlePasswordChange}
+                    placeholder="Contraseña"
+                    required
+                />
                 <select name="role" value={role} onChange={handleRoleChange} required>
                     <option value="comprador">Comprador</option>
                     <option value="vendedor">Vendedor</option>
                 </select>
-                <button type="submit" className="button">Iniciar Sesión</button>
-                <button onClick={() => navigate(-1)} className="button">Regresar</button>
+                <div className="button-group">
+                    <button type="submit" className="button">Iniciar Sesión</button>
+                    <button type="button" onClick={() => navigate(-1)} className="button">Regresar</button>
+                </div>
                 {error && <p className="error-message">{error}</p>}
             </form>
         </div>

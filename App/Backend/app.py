@@ -36,8 +36,8 @@ Session(app)  # Inicializar Flask-Session
 # Configuración de Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
-app.config['MAIL_USERNAME'] = 'webaholics82@gmail.com'
-app.config['MAIL_PASSWORD'] = 'yaoa bqxo jjdn lbea'
+app.config['MAIL_USERNAME'] = 'MScreatec@gmail.com'
+app.config['MAIL_PASSWORD'] = 'volf npsl lsoh doxn'
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 
