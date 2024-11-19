@@ -1,21 +1,25 @@
-.edit-product-container {
+/* Contenedor principal para la página de edición de productos */
+.edit-product-container { 
     max-width: 500px;
     margin: auto;
     padding: 20px;
     text-align: center;
 }
 
+/* Mensaje de éxito o error al actualizar el producto */
 .edit-product-message {
     color: #4CAF50;
     margin-bottom: 15px;
     font-size: 1.1em;
 }
 
+/* Estilo general del formulario de edición */
 .edit-product-form {
     display: flex;
     flex-direction: column;
 }
 
+/* Estilo de los campos de entrada y textarea */
 .edit-product-input,
 .edit-product-textarea {
     margin-bottom: 15px;
@@ -25,11 +29,13 @@
     font-size: 1em;
 }
 
+/* Ajustes específicos para el textarea */
 .edit-product-textarea {
     resize: vertical;
     height: 100px;
 }
 
+/* Botón de actualización */
 .edit-product-button {
     background-color: #FFC107;
     color: white;
@@ -42,6 +48,7 @@
     transition: background-color 0.3s, transform 0.3s;
 }
 
+/* Hover para el botón */
 .edit-product-button:hover {
     background-color: #e0a800;
     transform: translateY(-3px);

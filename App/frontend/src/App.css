@@ -1,13 +1,14 @@
+/* Importación de fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@500;700&display=swap');
 
-/* General styles */
+/* Estilo global */
 .app {
   text-align: center;
   font-family: 'Roboto', sans-serif;
 }
 
-/* Header styles */
+/* Encabezado de la aplicación */
 .app-header {
   background-color: transparent;
   color: #333;
@@ -26,6 +27,7 @@
   margin-right: 10px;
 }
 
+/* Botones de autenticación */
 .auth-buttons-container {
   display: flex;
   justify-content: flex-end;
@@ -35,7 +37,7 @@
   margin: 0 auto;
 }
 
-/* Welcome page */
+/* Página de bienvenida */
 .welcome-page h2 {
   margin-top: 20px;
   font-size: 36px;
@@ -45,7 +47,7 @@
   padding: 20px 0;
 }
 
-/* Button container */
+/* Contenedor de botones */
 .button-container {
   display: flex;
   justify-content: center;
@@ -54,7 +56,7 @@
   flex-direction: row;
 }
 
-/* Buttons */
+/* Botones principales */
 .app-button {
   font-family: 'Montserrat', sans-serif;
   background-color: #57ba21;
@@ -75,7 +77,7 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.20);
 }
 
-/* Image slider */
+/* Slider de imágenes */
 .image-slider {
   width: 100%;
   height: 50vh;
@@ -86,6 +88,7 @@
   position: relative;
 }
 
+/* Botones del slider */
 .slide-button {
   border: none;
   background: #57ba21;
@@ -111,6 +114,7 @@
   right: 20px;
 }
 
+/* Imágenes del slider */
 .image-slider img {
   width: 80%;
   height: 80%;

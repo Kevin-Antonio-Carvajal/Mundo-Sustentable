@@ -1,12 +1,12 @@
-/* Main container for the login page */
-.login-page-container {
+/* Contenedor principal de la página de inicio de sesión */
+.login-page-container { 
     max-width: 800px;
     margin: 40px auto;
     padding: 0 20px;
     text-align: center;
 }
 
-/* Title styling */
+/* Estilo para el encabezado principal */
 h2 {
     font-size: 2em;
     color: #000000;
@@ -14,14 +14,14 @@ h2 {
     font-weight: bold;
 }
 
-/* Form styling */
+/* Estilo para el formulario */
 .login-page-form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Input and select styling */
+/* Entradas de texto y selección */
 .login-page-input,
 .login-page-select {
     width: 100%;
@@ -35,13 +35,14 @@ h2 {
     transition: border-color 0.3s ease;
 }
 
+/* Cambia el color del borde al enfocar */
 .login-page-input:focus,
 .login-page-select:focus {
     border-color: #57ba21;
     outline: none;
 }
 
-/* Button group styling */
+/* Botones agrupados */
 .login-page-button-group {
     display: flex;
     gap: 15px;
@@ -49,7 +50,7 @@ h2 {
     margin-top: 20px;
 }
 
-/* Button styling */
+/* Estilo para los botones */
 .login-page-button {
     background-color: #57ba21;
     color: white;
@@ -62,13 +63,14 @@ h2 {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Efecto hover en los botones */
 .login-page-button:hover {
     background-color: #4fcef8;
     transform: translateY(-2px);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Error message styling */
+/* Mensaje de error */
 .login-page-error-message {
     color: #d32f2f;
     font-size: 0.9em;

@@ -1,13 +1,14 @@
+/* Contenedor principal de los detalles del producto */
 .product-details-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     margin: auto;
     padding-top: 50px;
     width: 80%;
 }
 
+/* Imagen del producto */
 .product-details-image {
     width: 50%;
     height: auto;
@@ -15,28 +16,28 @@
     margin-bottom: 20px;
 }
 
+/* Información del producto */
 .product-details-info {
     text-align: center;
     line-height: 1.6;
     font-size: 1.2rem;
 }
 
+/* Botón para regresar */
 .product-details-button {
-    font-family: 'Montserrat', sans-serif;
     background-color: #FFC107;
-    border: none;
-    padding: 15px 30px;
-    margin: 10px auto;
-    border-radius: 5px;
     color: white;
-    text-decoration: none;
-    font-weight: 500;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
     font-size: 18px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: 500;
     cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Hover del botón */
 .product-details-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.20);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }

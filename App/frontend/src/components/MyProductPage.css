@@ -1,3 +1,4 @@
+/* Página principal de "Mis Productos" */
 .my-products-page { 
     max-width: 1200px;
     margin: auto;
@@ -5,12 +6,14 @@
     text-align: center;
 }
 
+/* Título principal */
 .my-products-title {
     font-size: 2em;
     margin-bottom: 20px;
     color: #000000;
 }
 
+/* Botón para regresar */
 .my-products-back-button {
     background-color: #57ba21;
     color: white;
@@ -29,6 +32,7 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
+/* Contenedor de productos */
 .my-products-container {
     display: flex;
     flex-wrap: wrap;
@@ -36,6 +40,7 @@
     justify-content: center;
 }
 
+/* Tarjeta de producto individual */
 .my-products-item {
     border: 1px solid #ccc;
     padding: 20px;
@@ -51,12 +56,14 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Contenedor para imágenes de productos */
 .my-products-image-container {
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
 }
 
+/* Imagen de producto */
 .my-products-image {
     width: 200px;
     height: 200px;
@@ -65,12 +72,14 @@
     border: 1px solid #ddd;
 }
 
+/* Detalles del producto */
 .my-products-details p {
     margin: 5px 0;
     font-size: 0.95em;
     color: #000000;
 }
 
+/* Inputs y textareas para edición */
 .my-products-input-full, .my-products-textarea, .my-products-select {
     width: 100%;
     padding: 8px;
@@ -80,7 +89,15 @@
     box-sizing: border-box;
 }
 
-.my-products-button,
+/* Grupo de botones */
+.my-products-button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+/* Estilo base para los botones */
 .my-products-save-button,
 .my-products-edit-button,
 .my-products-delete-button,
@@ -97,13 +114,7 @@
     color: white;
 }
 
-.my-products-button-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
-}
-
+/* Botones con colores específicos */
 .my-products-save-button {
     background-color: #57ba21;
 }
@@ -120,6 +131,7 @@
     background-color: #4CAF50;
 }
 
+/* Hover para botones */
 .my-products-save-button:hover, 
 .my-products-edit-button:hover, 
 .my-products-delete-button:hover, 
@@ -128,12 +140,14 @@
     box-shadow: 0 12px 24px rgba(0,0,0,0.20);
 }
 
+/* Mensaje cuando no hay productos */
 .my-products-empty-message {
     font-size: 1.2em;
     color: #000000;
     margin-top: 30px;
 }
 
+/* Botón para imágenes */
 .my-products-image-button {
     font-family: 'Montserrat', sans-serif;
     background-color: #4CAF50;

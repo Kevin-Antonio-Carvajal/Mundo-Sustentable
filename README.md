@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 # Mundo Sustentable
 Repositorio oficial del proyecto final Riesgo Tecnológico - 2024 para Ingeniería de Software, Facultad de Ciencias, UNAM, semestre 2024-2.
+=======
+# MarketCiencias
+Repositorio oficial del proyecto final Riesgo Tecnológico - 2024, Facultad de Ciencias, UNAM, semestre 2024-2.
+>>>>>>> d0b21890 (Base de datos poblada)
 
 ## Profesores:
 - Selene Marisol Martínez Ramírez

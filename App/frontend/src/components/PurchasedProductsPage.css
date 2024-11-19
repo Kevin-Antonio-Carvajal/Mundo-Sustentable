@@ -1,4 +1,4 @@
-/* General container styling */
+/* Contenedor principal para productos comprados */
 .purchased-products-container {
     padding: 20px;
     background-color: #f4f4f9;
@@ -7,7 +7,7 @@
     margin: auto;
 }
 
-/* Page title styling */
+/* Título de la página */
 .page-title {
     font-size: 1.8em;
     font-weight: bold;
@@ -15,7 +15,7 @@
     margin-bottom: 10px;
 }
 
-/* Back button styling - placed below the title */
+/* Botón para regresar */
 .back-button {
     background-color: #4fcef8;
     color: white;
@@ -32,14 +32,14 @@
     background-color: #3ab2da;
 }
 
-/* Product grid layout */
+/* Grid para mostrar productos */
 .purchased-product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
 
-/* Product card styling */
+/* Tarjeta de producto */
 .purchased-product-card {
     background-color: white;
     border-radius: 8px;
@@ -53,7 +53,7 @@
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Image styling */
+/* Imagen del producto */
 .purchased-product-image-container {
     width: 100%;
     height: 200px;
@@ -74,7 +74,7 @@
     transform: scale(1.05);
 }
 
-/* Product details */
+/* Detalles del producto */
 .purchased-product-details {
     padding: 15px;
     text-align: left;
@@ -94,7 +94,6 @@
     margin: 5px 0;
 }
 
-/* Price styling */
 .product-price {
     font-size: 1em;
     color: #000000;
@@ -102,7 +101,7 @@
     margin: 5px 0;
 }
 
-/* Opinion button styling */
+/* Botón para agregar opinión */
 .opinion-button {
     background-color: #57ba21;
     color: white;
@@ -123,7 +122,7 @@
     transform: translateY(-2px);
 }
 
-/* No products message */
+/* Mensaje cuando no hay productos */
 .no-products-message {
     font-size: 1.2em;
     color: #555;
