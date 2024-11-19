@@ -1,3 +1,19 @@
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import RegisterPage from './components/RegisterPage';
+import LoginPage from './components/LoginPage';
+import HomePage from './components/HomePage';
+import ProductForm from './components/ProductForm';
+import MenuPage from './components/MenuPage';
+import ProductListPage from './components/ProductListPage';
+import ProductDetailsPage from './components/ProductDetailsPage';
+import MyProductsPage from './components/MyProductsPage';
+import EditProductPage from './components/EditProductPage';
+import PurchasedProductsPage from './components/PurchasedProductsPage';
+import OpinionForm from './components/OpinionForm';
+import OpinionsPage from './components/OpinionsPage';
+import './App.css';
+
 /**
  * Representa el encabezado de la aplicación, mostrando los logotipos
  * de Mundo Sustentable y del equipo Createc.
