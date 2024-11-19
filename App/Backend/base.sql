@@ -17,7 +17,7 @@ CREATE TABLE Usuarios
   tipo_rol ENUM('comprador', 'vendedor') NOT NULL,
   UNIQUE (correo),
   UNIQUE (telefono),
-  UNIQUE (nombre_usuario) -- Asegura que nombre_usuario sea único, si aún no se ha definido                        
+  UNIQUE (nombre_usuario)                        
 );
 
 CREATE TABLE Productos (
@@ -28,8 +28,8 @@ CREATE TABLE Productos (
   categoria VARCHAR(255) NOT NULL,
   contacto VARCHAR(255) NOT NULL,
   precio DECIMAL(10, 2) NOT NULL,  
-  nombre_usuario VARCHAR(255) NOT NULL,  -- Usar nombre_usuario en vez de usuario_id
-  FOREIGN KEY (nombre_usuario) REFERENCES Usuarios(nombre_usuario) -- Actualización de la clave foránea
+  nombre_usuario VARCHAR(255) NOT NULL, 
+  FOREIGN KEY (nombre_usuario) REFERENCES Usuarios(nombre_usuario) 
 );
 
 CREATE TABLE Compras (

@@ -1,4 +1,4 @@
-/* Main container for the registration page */
+/* Contenedor principal de la página de registro */
 .container {
     max-width: 800px;
     margin: 40px auto;
@@ -6,7 +6,7 @@
     text-align: center;
 }
 
-/* Title styling */
+/* Título de la página */
 h2 {
     font-size: 2em;
     color: #000000;
@@ -14,12 +14,13 @@ h2 {
     font-weight: bold;
 }
 
-/* Form group styling */
+/* Grupo de formulario */
 .form-group {
     margin-bottom: 20px;
     text-align: left;
 }
 
+/* Etiquetas de formulario */
 label {
     display: block;
     font-size: 1em;
@@ -28,7 +29,7 @@ label {
     font-weight: 500;
 }
 
-/* Input and select styling */
+/* Campos de entrada y selector */
 input, select {
     width: 100%;
     padding: 12px;
@@ -46,7 +47,7 @@ input:focus, select:focus {
     outline: none;
 }
 
-/* Button group styling */
+/* Grupo de botones */
 .button-group {
     display: flex;
     gap: 15px;
@@ -54,7 +55,7 @@ input:focus, select:focus {
     margin-top: 25px;
 }
 
-/* Button styling */
+/* Botón de acción */
 .button {
     background-color: #57ba21;
     color: white;
@@ -73,7 +74,7 @@ input:focus, select:focus {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Error message styling */
+/* Mensaje de error */
 .error-message {
     font-size: 0.9em;
     color: #e74c3c;

@@ -1,4 +1,5 @@
-.home-page-container {
+/* Contenedor principal de la página de inicio */
+.home-page-container { 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,6 +9,7 @@
     padding: 20px;
 }
 
+/* Estilo para los botones en la página de inicio */
 .home-page-button {
     font-family: 'Montserrat', sans-serif;
     background-color: #57ba21;
@@ -23,6 +25,7 @@
     width: fit-content;
 }
 
+/* Efecto hover para los botones */
 .home-page-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.20);

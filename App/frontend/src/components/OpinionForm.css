@@ -1,4 +1,5 @@
-.opinion-form-container {
+/* Contenedor principal del formulario de opinión */
+.opinion-form-container { 
     max-width: 500px;
     margin: 40px auto;
     padding: 20px;
@@ -9,27 +10,31 @@
     text-align: center;
 }
 
+/* Título principal del formulario */
 h1 {
     font-size: 1.8em;
     margin-bottom: 20px;
     color: #000000;
 }
 
+/* Mensaje de estado después de enviar la opinión */
 .opinion-form-message {
-    color: #28a745; /* Verde para éxito */
+    color: #28a745; /* Color verde para éxito */
     margin-bottom: 15px;
 }
 
 .opinion-form-message.error {
-    color: #d32f2f; /* Rojo para error */
+    color: #d32f2f; /* Color rojo para errores */
 }
 
+/* Estructura del formulario */
 .opinion-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
+/* Etiquetas de los campos */
 .opinion-form-label {
     text-align: left;
     font-weight: 500;
@@ -37,6 +42,7 @@ h1 {
     color: #000000;
 }
 
+/* Campos de entrada de texto y áreas de texto */
 .opinion-form-input,
 .opinion-form-textarea {
     width: 100%;
@@ -50,13 +56,15 @@ h1 {
     color: #000000;
 }
 
+/* Área de texto */
 .opinion-form-textarea {
-    resize: vertical;
+    resize: vertical; /* Permite ajustar el tamaño vertical */
     height: 120px;
 }
 
+/* Botón principal */
 .opinion-form-button {
-    background-color: #57ba21;
+    background-color: #57ba21; /* Color principal */
     color: white;
     padding: 12px 25px;
     border: none;
@@ -66,15 +74,17 @@ h1 {
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    margin-bottom: 20px; /* Ajusta el espacio debajo del botón */
+    margin-bottom: 20px; 
 }
 
+/* Efecto hover para el botón */
 .opinion-form-button:hover {
-    background-color: #4fcef8;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #4fcef8; /* Cambia el color al pasar el cursor */
+    transform: translateY(-3px); /* Mueve el botón ligeramente hacia arriba */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Añade sombra */
 }
 
+/* Espaciado entre botones adicionales */
 button {
     margin-top: 15px;
 }
